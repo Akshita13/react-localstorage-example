@@ -21,14 +21,10 @@ export default function App() {
         value={wordsToStorage}
         placeholder={!wordsToStorage && "please enter value to store"}
       />
-      {localStorage.getItem("name") ? (
-        <>
-          <h1>{localStorage.getItem("name")}</h1>
+      {localStorage.getItem("name") && (
           <button onClick={() => onClear()}>Clear from storage</button>
-        </>
-      ) : (
-        <h1>{localStorage.getItem("name")}</h1>
       )}
+        <h1>{localStorage.getItem("name")}</h1>
     </div>
   );
 }
