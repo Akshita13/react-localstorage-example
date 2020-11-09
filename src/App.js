@@ -4,7 +4,7 @@ import "./style.css";
 export default function App() {
   const [wordsToStorage, setWordsToStorage] = React.useState("");
   const onhandleChange = value => {
-    localStorage.setItem("name", wordsToStorage);
+    localStorage.setItem("name", value);
     setWordsToStorage(value);
   };
   const onClear = () => {
@@ -18,8 +18,8 @@ export default function App() {
       <input
         type="text"
         onChange={e => onhandleChange(e.target.value)}
-        value={localStorage.getItem("name")}
-        placeholder={!localStorage.getItem("name") ?  "please enter value to store" : localStorage.getItem("name")}
+        value={localStorage.getItem("name") ? localStorage.getItem("name") : ''}
+        placeholder={!localStorage.getItem("name") &&  "please enter value to store"}
       />
       {localStorage.getItem("name") && (
           <button onClick={() => onClear()}>Clear from storage</button>
