@@ -23,11 +23,11 @@ export default function App() {
       />
       {localStorage.getItem("name") ? (
         <>
-          <h1>{wordsToStorage}</h1>
+          <h1>{localStorage.getItem("name")}</h1>
           <button onClick={() => onClear()}>Clear from storage</button>
         </>
       ) : (
-        <h1>{wordsToStorage}</h1>
+        <h1>{localStorage.getItem("name")}</h1>
       )}
     </div>
   );
