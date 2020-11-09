@@ -19,12 +19,12 @@ export default function App() {
         type="text"
         onChange={e => onhandleChange(e.target.value)}
         value={wordsToStorage}
-        placeholder={!wordsToStorage && "please enter value to store"}
+        placeholder={!localStorage.getItem("name") && "please enter value to store"}
       />
       {localStorage.getItem("name") && (
           <button onClick={() => onClear()}>Clear from storage</button>
       )}
-        <h1>{localStorage.getItem("name")}</h1>
+        <h1>{localStorage.getItem("name") ? localStorage.getItem("name") : ''}</h1>
     </div>
   );
 }
