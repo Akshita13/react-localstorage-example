@@ -18,8 +18,8 @@ export default function App() {
       <input
         type="text"
         onChange={e => onhandleChange(e.target.value)}
-        value={wordsToStorage}
-        placeholder={!localStorage.getItem("name") && "please enter value to store"}
+        value={localStorage.getItem("name")}
+        placeholder={!localStorage.getItem("name") ?  "please enter value to store" : localStorage.getItem("name")}
       />
       {localStorage.getItem("name") && (
           <button onClick={() => onClear()}>Clear from storage</button>
